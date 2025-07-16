@@ -1,0 +1,41 @@
+/* Azure-inspired accent colors */
+:root {
+    --mtc-primary: #0078d4;
+    --mtc-secondary: #00bcf2;
+    --mtc-light: #e6f7ff;
+    --mtc-dark: #213547;
+}
+
+/* Accent backgrounds for sections */
+.bg-mtc-gradient {
+    background: linear-gradient(
+        90deg,
+        var(--mtc-primary) 0%,
+        var(--mtc-secondary) 100%
+    );
+    color: #fff;
+}
+
+.text-mtc-primary {
+    color: var(--mtc-primary) !important;
+}
+
+.btn-mtc {
+    background: var(--mtc-primary);
+    color: #fff;
+    border: none;
+    transition: background 0.2s;
+}
+.btn-mtc:hover {
+    background: var(--mtc-secondary);
+    color: #fff;
+}
+
+/* Card and section styling */
+.mtc-card {
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 120, 212, 0.07);
+    background: #fff;
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
