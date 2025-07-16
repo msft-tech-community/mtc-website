@@ -6,6 +6,7 @@ import Team from "./pages/Team.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
+import Health from "./pages/Health.jsx";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/health" element={<Health />} />
             </Routes>
         </>
     );
