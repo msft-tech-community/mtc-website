@@ -22,6 +22,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/health" element={<Health />} />
                 <Route path="/notfound" element={<Notfound />} />
+                <Route path="*" element={<Notfound />} />
             </Routes>
         </>
     );
