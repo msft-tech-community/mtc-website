@@ -7,6 +7,7 @@ import Gallery from "./pages/Gallery.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Health from "./pages/Health.jsx";
+import Notfound from "./pages/Notfound.jsx"; // <-- Add this line
 
 function App() {
     return (
@@ -20,6 +21,8 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/health" element={<Health />} />
+                <Route path="/notfound" element={<Notfound />} />
+                <Route path="*" element={<Notfound />} />
             </Routes>
         </>
     );
