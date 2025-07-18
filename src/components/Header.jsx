@@ -2,15 +2,25 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <nav
+            className="navbar navbar-expand-lg navbar-dark py-3"
+            style={{
+                background:
+                    "radial-gradient(ellipse at 70% 70%, #2a2e5a 0%, #0a0e2a 100%)",
+            }}
+        >
             <div className="container">
-                <Link className="navbar-brand" to="/">
+                <Link className="navbar-brand d-flex align-items-center" to="/">
                     <img
-                        src="https://cdn.worldvectorlogo.com/logos/microsoft.svg"
-                        alt="Logo"
-                        style={{ height: "40px", marginRight: "10px" }}
+                        src="images/image 14.png"
+                        alt="Microsoft Learn Student Ambassadors"
+                        style={{ height: 56, marginRight: 16 }}
                     />
-                    MTC Club
+                    <span className="fs-4 fw-semibold brand-title">
+                        Microsoft Tech
+                        <br />
+                        Community
+                    </span>
                 </Link>
                 <button
                     className="navbar-toggler"
@@ -28,13 +38,13 @@ export default function Header() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/events">
-                                Events
+                            <Link className="nav-link" to="/about">
+                                About Us
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/team">
-                                Team
+                            <Link className="nav-link" to="/events">
+                                Events
                             </Link>
                         </li>
                         <li className="nav-item">
@@ -43,13 +53,8 @@ export default function Header() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/about">
-                                About
-                            </Link>
-                        </li>
-                        <li className="nav-item">
                             <Link className="nav-link" to="/contact">
-                                Contact
+                                Contact Us
                             </Link>
                         </li>
                     </ul>
