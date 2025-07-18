@@ -1,16 +1,20 @@
 # Microsoft Tech Community Club Website
 
-A modern React + Vite website for the Microsoft Tech Community Club, featuring events, team, gallery, health check, and more. Styled with Bootstrap 5 and custom Azure-inspired accents.
+A modern, responsive website for the Microsoft Tech Community Club, built with React and Vite. The site features information about events, team members, a gallery, a health check page, and more. Styling is provided by Bootstrap 5 and custom Azure-inspired accents.
+
+---
 
 ## Features
 
--   ⚡ Fast development with [Vite](https://vitejs.dev/)
--   ⚛️ Built using [React](https://react.dev/)
--   🛣️ Routing via [React Router](https://reactrouter.com/)
--   🎨 Styled with [Bootstrap 5](https://getbootstrap.com/) and custom CSS
--   📈 Health check page with live latency
--   📷 Gallery, Team, Events, About, and Contact pages
--   Responsive design
+-   Fast development powered by [Vite](https://vitejs.dev/)
+-   Built using [React](https://react.dev/)
+-   Routing via [React Router](https://reactrouter.com/)
+-   Styled with [Bootstrap 5](https://getbootstrap.com/) and custom CSS
+-   Health check page with live latency
+-   Gallery, Team, Events, About, and Contact pages
+-   Responsive design for all devices
+
+---
 
 ## Getting Started
 
@@ -31,7 +35,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) to view the site.
+Open the URL shown in your terminal after running the above command to view the site.
 
 ### Build
 
@@ -44,6 +48,8 @@ npm run build
 ```bash
 npm run preview
 ```
+
+---
 
 ## Project Structure
 
@@ -60,7 +66,20 @@ public/
   _redirects       # SPA redirects for deployment
 ```
 
+---
+
 ## Deployment
 
 -   Supports static hosting (Netlify, Vercel, GitHub Pages, Azure Static Web Apps, etc.)
 -   SPA redirects via `public/_redirects`
+
+**Live Site:**
+https://staging-mtc.netlify.app/
+
+---
+
+## Contributors
+
+-   [Shlok Bhardwaj](https://github.com/FortxArcader)
+
+---
