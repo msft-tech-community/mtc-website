@@ -13,6 +13,22 @@
     min-height: 70vh;
 }
 
+/* Mobile specific improvements for centering */
+@media (max-width: 991.98px) {
+    .hero-section {
+        text-align: center;
+    }
+    
+    .hero-text {
+        text-align: center !important;
+    }
+    
+    .hero-title,
+    .hero-subtitle {
+        text-align: center;
+    }
+}
+
 .hero-title {
     color: #fff;
     font-family: "Georgia", serif;
