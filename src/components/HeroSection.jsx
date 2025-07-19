@@ -11,13 +11,13 @@ const slides = [
     {
         title: "What awaits you at MTC ?",
         subtitle:
-            "From coding bootcamps to design jams, tech talks to real-world projects — there’s something for every curious mind at MTC.",
+            "From coding bootcamps to design jams, tech talks to real-world projects — there's something for every curious mind at MTC.",
         img: "/images/image 16.png",
     },
     {
         title: "Your journey starts here..",
         subtitle:
-            "At MTC, you’ll not only learn — you’ll grow into a confident, skilled, and connected tech leader of tomorrow.",
+            "At MTC, you'll not only learn — you'll grow into a confident, skilled, and connected tech leader of tomorrow.",
         img: "/images/image 17.png",
     },
 ];
@@ -34,15 +34,17 @@ export default function HeroSection() {
 
     return (
         <div className="hero-bg">
-            <section className="container hero-section d-flex align-items-center justify-content-between flex-wrap-reverse py-5">
-                <div className="hero-text col-lg-6 col-12 mb-5 mb-lg-0">
+            {/* Updated responsive padding classes: py-lg-5 py-md-3 py-2 */}
+            <section className="container hero-section d-flex align-items-center justify-content-between flex-wrap-reverse py-lg-5 py-md-3 py-2">
+                <div className="hero-text col-lg-6 col-12 mb-4 mb-lg-0">
                     <h1 className="display-3 fw-bold mb-3 hero-title">
                         {slides[current].title}
                     </h1>
                     <p className="lead mb-4 hero-subtitle">
                         {slides[current].subtitle}
                     </p>
-                    <div className="d-flex gap-3">
+                    {/* Updated button container with responsive flex */}
+                    <div className="d-flex gap-3 flex-column flex-sm-row">
                         <a
                             href="#"
                             className="btn btn-lg btn-mtc-primary shadow-sm px-4"
@@ -66,8 +68,8 @@ export default function HeroSection() {
                     />
                 </div>
             </section>
-            {/* Dots navigation */}
-            <div className="d-flex justify-content-center mt-3">
+            {/* Updated dots navigation with better mobile spacing */}
+            <div className="d-flex justify-content-center mt-2 pb-3">
                 {slides.map((_, idx) => (
                     <button
                         key={idx}
