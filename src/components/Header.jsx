@@ -16,11 +16,6 @@ export default function Header() {
                         alt="Microsoft Learn Student Ambassadors"
                         style={{ height: 56, marginRight: 16 }}
                     />
-                    <span className="fs-4 fw-semibold brand-title">
-                        Microsoft Tech
-                        <br />
-                        Community
-                    </span>
                 </Link>
                 <button
                     className="navbar-toggler"
