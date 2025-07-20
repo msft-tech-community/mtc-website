@@ -34,17 +34,18 @@ export default function HeroSection() {
 
     return (
         <div className="hero-bg">
-            {/* Updated responsive padding classes: py-lg-5 py-md-3 py-2 */}
-            <section className="container hero-section d-flex align-items-center justify-content-between flex-wrap-reverse py-lg-5 py-md-3 py-2">
-                <div className="hero-text col-lg-6 col-12 mb-4 mb-lg-0">
+            {/* Mobile padding and Mobile centering */}
+            <section className="container hero-section d-flex align-items-center justify-content-center justify-content-lg-between flex-wrap-reverse py-lg-5 py-md-3 py-2">
+                {/* Mobile text centering with text-center text-lg-start */}
+                <div className="hero-text col-lg-6 col-12 mb-4 mb-lg-0 text-center text-lg-start">
                     <h1 className="display-3 fw-bold mb-3 hero-title">
                         {slides[current].title}
                     </h1>
                     <p className="lead mb-4 hero-subtitle">
                         {slides[current].subtitle}
                     </p>
-                    {/* Updated button container with responsive flex */}
-                    <div className="d-flex gap-3 flex-column flex-sm-row">
+                    {/* Mobile button centering with justify-content-center justify-content-lg-start */}
+                    <div className="d-flex gap-3 flex-column flex-sm-row justify-content-center justify-content-lg-start">
                         <a
                             href="#"
                             className="btn btn-lg btn-mtc-primary shadow-sm px-4"
