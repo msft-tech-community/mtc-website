@@ -3,8 +3,9 @@ import "./Footer.css";
 
 export default function Footer() {
     return (
-        <footer className="footer-bg pt-5 pb-3 position-relative">
-            <div className="container">
+        <footer className="footer-bg pt-3 pb-3 position-relative">
+            {/* Changed to container-fluid for less side padding */}
+            <div className="container-fluid">
                 <div className="row gy-4">
                     {/* Logo & About */}
                     <div className="col-lg-4 col-md-6">
@@ -14,15 +15,7 @@ export default function Footer() {
                                 alt="Microsoft Learn Student Ambassadors"
                                 style={{ height: 48, marginRight: 16 }}
                             />
-                            <span
-                                className="fs-5 fw-bold"
-                                style={{
-                                    fontFamily: "Georgia, serif",
-                                    color: "#fff",
-                                }}
-                            >
-                                Microsoft Tech Community
-                            </span>
+                            {/* Removed "Microsoft Tech Community" text */}
                         </div>
                         <div
                             className="fst-italic mb-3"
