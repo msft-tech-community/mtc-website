@@ -48,13 +48,13 @@ export default function HighlightList() {
                     <h2 className="display-5 fw-bold text-mtc-primary mb-3">
                         What Awaits You at MTC
                     </h2>
-                    <p className="lead text-muted fs-4">
+                    <p className="lead fs-4" style={{ color: "#ffffff" }}>
                         Discover the amazing opportunities and experiences our community offers
                     </p>
                 </div>
                 
                 {/* Highlights Grid */}
-                <div className="row g-4 mb-5">
+                <div className="row justify-content-center g-4 mb-5">
                     {highlights.map((highlight, index) => (
                         <div key={index} className="col-lg-4 col-md-6">
                             <div className="highlight-card h-100">
