@@ -43,12 +43,12 @@ export default function HighlightList() {
     return (
         <section className="highlight-section py-5">
             <div className="container">
-                {/* Section Header */}
+                {/* Section Header - white text for dark theme */}
                 <div className="text-center mb-5">
-                    <h2 className="display-5 fw-bold text-mtc-primary mb-3">
+                    <h2 className="display-5 fw-bold mb-3" style={{ color: '#fff' }}>
                         What Awaits You at MTC
                     </h2>
-                    <p className="lead text-muted fs-4">
+                    <p className="lead fs-4" style={{ color: '#bfc6e0' }}>
                         Discover the amazing opportunities and experiences our community offers
                     </p>
                 </div>

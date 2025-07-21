@@ -3,7 +3,7 @@ import "./HeroSection.css"; // Reuse background and font styles
 
 const events = [
     {
-        title: "DSA CONQUEST",
+        title: "DSA Conquest",
         date: "14/07/25",
         description:
             "An intense coding competition focusing on data structures and algorithms. Hosted for students to test and strengthen their problem-solving skills.",
@@ -38,10 +38,8 @@ export default function EventsSlideshow() {
         <div className="hero-bg py-5">
             <section className="container d-flex flex-column align-items-center justify-content-center">
                 <div className="text-center mb-3">
-                    <h2
-                        className="display-6 fw-bold hero-title"
-                        style={{ letterSpacing: 1 }}
-                    >
+                    {/* Updated: Unified title styling to match other sections */}
+                    <h2 className="display-5 fw-bold mb-3" style={{ color: '#fff', letterSpacing: '1px' }}>
                         {events[current].title}
                     </h2>
                 </div>
