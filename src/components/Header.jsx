@@ -1,9 +1,10 @@
+import "./Header.css";
 import { Link } from "react-router-dom";
 
 export default function Header() {
     return (
         <nav
-            className="navbar navbar-expand-lg navbar-dark py-3"
+            className="navbar navbar-expand-lg navbar-dark py-4"
             style={{
                 background:
                     "radial-gradient(ellipse at 70% 70%, #2a2e5a 0%, #0a0e2a 100%)",
@@ -26,7 +27,7 @@ export default function Header() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav ms-auto">
+                    <ul className="navbar-nav ms-auto nav-menu">
                         <li className="nav-item">
                             <Link className="nav-link" to="/">
                                 Home

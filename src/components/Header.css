@@ -1,0 +1,9 @@
+.navbar-nav .nav-link {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  display: inline-block;
+}
+.nav-menu {
+    display: flex;
+    gap: 1.5rem; /* Adjust spacing as needed */
+}
