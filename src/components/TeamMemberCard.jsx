@@ -68,11 +68,9 @@ export default function TeamMemberCard() {
     return (
         <div className="hero-bg py-5">
             <section className="container">
-                <h2
-                    className="text-center mb-5 hero-title"
-                    style={{ letterSpacing: 1 }}
-                >
-                    MEMBER MILESTONES
+                {/* Updated: Changed from "MEMBER MILESTONES" to "Member Milestones" and unified styling */}
+                <h2 className="text-center mb-5 display-5 fw-bold" style={{ color: '#fff', letterSpacing: '1px' }}>
+                    Member Milestones
                 </h2>
                 <div className="row justify-content-center">
                     {slides[current].map((member, idx) => (
