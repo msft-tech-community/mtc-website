@@ -1,12 +1,13 @@
 /* Main section styling with gradient background */
 .highlight-section {
-    background: linear-gradient(135deg, #f8f9ff 0%, #e6f7ff 100%);
+    /* background: linear-gradient(135deg, #302A64 0%, rgba(30, 34, 70, 0.85) 100%); */
+    background: radial-gradient(circle, #3b4069 15%, #181d42 80%);
     position: relative;
     overflow: hidden;
 }
 
 .highlight-card {
-    background: #fff;
+    background: #e9eaeb;
     border-radius: 20px;
     padding: 2.5rem 2rem;
     box-shadow: 0 8px 32px rgba(0, 120, 212, 0.08);
@@ -94,12 +95,13 @@
 }
 
 .highlight-cta-card {
-    background: linear-gradient(135deg, var(--mtc-primary) 0%, var(--mtc-secondary) 100%);
-    color: #fff;
+    /* background: linear-gradient(135deg, var(--mtc-primary) 0%, var(--mtc-secondary) 100%); */
+    background: linear-gradient(135deg, #344585 100%, #6EBFF4 22%);
+    color: #ffffff;
     padding: 3rem 2.5rem;
     border-radius: 24px;
-    box-shadow: 0 16px 48px rgba(0, 120, 212, 0.2);
-    max-width: 650px;
+    box-shadow: 0 16px 48px rgba(138, 140, 141, 0.2);
+    max-width: 1350px;
     position: relative;
     overflow: hidden;
 }
