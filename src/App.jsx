@@ -16,13 +16,13 @@ function App() {
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/events" element={<Events />} />
+                {/* <Route path="/events" element={<Events />} />
                 <Route path="/team" element={<Team />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/health" element={<Health />} />
-                <Route path="/notfound" element={<Notfound />} />
+                <Route path="/notfound" element={<Notfound />} /> */}
                 <Route path="*" element={<Notfound />} />
                 <Route path="/event-link" element={<EventRedirect />} />
             </Routes>
