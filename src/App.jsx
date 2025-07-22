@@ -9,6 +9,7 @@ import Contact from "./pages/Contact.jsx";
 import Health from "./pages/Health.jsx";
 import Notfound from "./pages/Notfound.jsx";
 import EventRedirect from "./pages/EventRedirect.jsx";
+import ExploreRedirect from "./pages/MsftSummary.jsx";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                 <Route path="/notfound" element={<Notfound />} /> */}
                 <Route path="*" element={<Notfound />} />
                 <Route path="/event-link" element={<EventRedirect />} />
+                <Route path="/exp-msft-summary" element={<ExploreRedirect />} />
             </Routes>
         </>
     );
