@@ -60,8 +60,10 @@ export default function EventsSlideshow() {
                         alt={events[current].title}
                         className="img-fluid rounded-4 shadow"
                         style={{
-                            width: "100%",
+                            width: "800px",
+                            height: "400px", 
                             objectFit: "cover",
+                            borderRadius:"20px",
                             minHeight: 320,
                             background: "#222",
                         }}

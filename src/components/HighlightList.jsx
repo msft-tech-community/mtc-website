@@ -54,7 +54,7 @@ export default function HighlightList() {
                 </div>
                 
                 {/* Highlights Grid */}
-                <div className="row g-4 mb-5">
+                <div className="row justify-content-center g-4 mb-5">
                     {highlights.map((highlight, index) => (
                         <div key={index} className="col-lg-4 col-md-6">
                             <div className="highlight-card h-100">
