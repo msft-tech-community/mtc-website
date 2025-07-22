@@ -15,10 +15,7 @@ export default function HeroSection() {
                     We’re working hard to bring something amazing for you. Stay
                     tuned!
                 </p>
-                <a
-                    href="https://mlsacommunity.tech"
-                    className="btn btn-lg btn-outline-light shadow px-4"
-                >
+                <a href="" className="btn btn-lg btn-outline-light shadow px-4">
                     Go to Home
                 </a>
             </section>
