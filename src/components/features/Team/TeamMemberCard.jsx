@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./HeroSection.css";
+import "../../ui/HeroSection/HeroSection.css";
 import "./TeamMemberCard.css";
 
 const members = [
@@ -66,10 +66,13 @@ export default function TeamMemberCard() {
     const [current, setCurrent] = useState(0);
 
     return (
-        <div className="hero-bg py-5">
+        <div id="team" className="hero-bg py-5">
             <section className="container">
                 {/* Updated: Changed from "MEMBER MILESTONES" to "Member Milestones" and unified styling */}
-                <h2 className="text-center mb-5 display-5 fw-bold" style={{ color: '#fff', letterSpacing: '1px' }}>
+                <h2
+                    className="text-center mb-5 display-5 fw-bold"
+                    style={{ color: "#fff", letterSpacing: "1px" }}
+                >
                     Member Milestones
                 </h2>
                 <div className="row justify-content-center">

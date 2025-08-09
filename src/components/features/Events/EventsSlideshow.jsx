@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./HeroSection.css"; // Reuse background and font styles
+import "../../ui/HeroSection/HeroSection.css"; // Reuse background and font styles
 
 const events = [
     {
@@ -35,11 +35,14 @@ export default function EventsSlideshow() {
     const goNext = () => setCurrent((prev) => (prev + 1) % events.length);
 
     return (
-        <div className="hero-bg py-5">
+        <div id="events" className="hero-bg py-5">
             <section className="container d-flex flex-column align-items-center justify-content-center">
                 <div className="text-center mb-3">
                     {/* Updated: Unified title styling to match other sections */}
-                    <h2 className="display-5 fw-bold mb-3" style={{ color: '#fff', letterSpacing: '1px' }}>
+                    <h2
+                        className="display-5 fw-bold mb-3"
+                        style={{ color: "#fff", letterSpacing: "1px" }}
+                    >
                         {events[current].title}
                     </h2>
                 </div>
@@ -61,9 +64,9 @@ export default function EventsSlideshow() {
                         className="img-fluid rounded-4 shadow"
                         style={{
                             width: "800px",
-                            height: "400px", 
+                            height: "400px",
                             objectFit: "cover",
-                            borderRadius:"20px",
+                            borderRadius: "20px",
                             minHeight: 320,
                             background: "#222",
                         }}

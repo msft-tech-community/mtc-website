@@ -1,35 +1,8 @@
-/* Azure-inspired accent colors */
-:root {
-    --mtc-primary: #0078d4;
-    --mtc-secondary: #00bcf2;
-    --mtc-light: #e6f7ff;
-    --mtc-dark: #213547;
-}
+/* Import global styles */
+@import "./styles/globals.css";
+@import "./styles/conflict-resolution.css";
 
-/* Accent backgrounds for sections */
-.bg-mtc-gradient {
-    background: linear-gradient(
-        90deg,
-        var(--mtc-primary) 0%,
-        var(--mtc-secondary) 100%
-    );
-    color: #fff;
-}
-
-.text-mtc-primary {
-    color: var(--mtc-primary) !important;
-}
-
-.btn-mtc {
-    background: var(--mtc-primary);
-    color: #fff;
-    border: none;
-    transition: background 0.2s;
-}
-.btn-mtc:hover {
-    background: var(--mtc-secondary);
-    color: #fff;
-}
+/* Additional app-specific styles can be added here */
 
 /* Card and section styling */
 .mtc-card {

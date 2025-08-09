@@ -1,5 +1,7 @@
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header.jsx";
+import Header from "./components/ui/Header/Header.jsx";
+import LoadingAnimation from "./components/ui/LoadingAnimation/LoadingAnimation.jsx";
 import Home from "./pages/Home.jsx";
 import Events from "./pages/Events.jsx";
 import Team from "./pages/Team.jsx";
@@ -11,6 +13,16 @@ import Notfound from "./pages/Notfound.jsx";
 import EventRedirect from "./pages/EventRedirect.jsx";
 
 function App() {
+    const [isLoading, setIsLoading] = useState(true);
+
+    const handleLoadingComplete = () => {
+        setIsLoading(false);
+    };
+
+    if (isLoading) {
+        return <LoadingAnimation onComplete={handleLoadingComplete} />;
+    }
+
     return (
         <>
             <Header />
