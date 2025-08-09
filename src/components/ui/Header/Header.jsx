@@ -60,10 +60,10 @@ export default function Header() {
     const navItems = [
         { name: "Home", path: "/", section: "hero" },
         { name: "About", section: "highlights" }, // Links to highlights section
-        { name: "Events", section: "events" },
-        { name: "Team", section: "team" },
-        { name: "Gallery", path: "/gallery" }, // External page
-        { name: "Contact", section: "contact" }, // Links to footer contact
+        { name: "Events", path: "/events" }, // Coming Soon page
+        { name: "Team", path: "/team" }, // Coming Soon page
+        { name: "Gallery", path: "/gallery" }, // Coming Soon page
+        { name: "Contact", path: "/contact-page" }, // Dedicated contact page
     ];
 
     return (
@@ -134,6 +134,7 @@ export default function Header() {
                     {/* Join Button */}
                     <motion.button
                         className="join-button"
+                        onClick={() => navigate("/join")}
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -196,6 +197,10 @@ export default function Header() {
                         ))}
                         <motion.button
                             className="mobile-join-btn"
+                            onClick={() => {
+                                navigate("/join");
+                                setIsMobileMenuOpen(false);
+                            }}
                             initial={{ opacity: 0, y: 20 }}
                             animate={
                                 isMobileMenuOpen

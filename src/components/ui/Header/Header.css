@@ -246,17 +246,25 @@
 }
 
 @media (max-width: 480px) {
-    .logo-text {
-        display: none;
+    .brand-title {
+        font-size: 1.1rem;
+    }
+
+    .brand-subtitle {
+        font-size: 0.65rem;
     }
 
     .microsoft-logo-small {
-        width: 28px;
-        height: 28px;
+        width: 24px;
+        height: 24px;
     }
 
     .logo-square-small {
-        width: 13px;
-        height: 13px;
+        width: 11px;
+        height: 11px;
+    }
+
+    .container {
+        padding: 0 12px;
     }
 }

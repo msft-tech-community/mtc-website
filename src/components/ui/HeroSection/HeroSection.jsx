@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
     Users,
     Calendar,
@@ -18,8 +19,10 @@ import {
 import "./HeroSection.css";
 
 const HeroSection = () => {
+    const navigate = useNavigate();
     const [currentSlide, setCurrentSlide] = useState(0);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [isHovered, setIsHovered] = useState(false);
 
     const slides = [
         {
@@ -121,11 +124,13 @@ const HeroSection = () => {
     ];
 
     useEffect(() => {
+        if (isHovered) return; // Pause carousel when hovered
+
         const timer = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % slides.length);
-        }, 8000); // Slower transition
+        }, 15000); // Even slower transition - 15 seconds
         return () => clearInterval(timer);
-    }, [slides.length]);
+    }, [slides.length, isHovered]);
 
     useEffect(() => {
         const handleMouseMove = (e) => {
@@ -152,9 +157,9 @@ const HeroSection = () => {
 
     const slideVariants = {
         enter: (direction) => ({
-            x: direction > 0 ? 300 : -300,
+            x: direction > 0 ? 100 : -100,
             opacity: 0,
-            scale: 0.9,
+            scale: 0.95,
         }),
         center: {
             zIndex: 1,
@@ -164,9 +169,9 @@ const HeroSection = () => {
         },
         exit: (direction) => ({
             zIndex: 0,
-            x: direction < 0 ? 300 : -300,
+            x: direction < 0 ? 100 : -100,
             opacity: 0,
-            scale: 0.9,
+            scale: 0.95,
         }),
     };
 
@@ -247,6 +252,8 @@ const HeroSection = () => {
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
             >
                 {/* Slide Navigation */}
                 <motion.button
@@ -280,9 +287,20 @@ const HeroSection = () => {
                         animate="center"
                         exit="exit"
                         transition={{
-                            x: { type: "spring", stiffness: 200, damping: 25 },
-                            opacity: { duration: 0.5 },
-                            scale: { duration: 0.5 },
+                            x: {
+                                type: "spring",
+                                stiffness: 100,
+                                damping: 20,
+                                mass: 1,
+                            },
+                            opacity: {
+                                duration: 0.8,
+                                ease: "easeInOut",
+                            },
+                            scale: {
+                                duration: 0.8,
+                                ease: "easeInOut",
+                            },
                         }}
                         className="slide-content"
                     >
@@ -364,6 +382,7 @@ const HeroSection = () => {
                         >
                             <motion.button
                                 className="hero-btn primary"
+                                onClick={() => navigate("/join")}
                                 whileHover={{
                                     scale: 1.08,
                                     y: -3,
@@ -377,6 +396,7 @@ const HeroSection = () => {
                             </motion.button>
                             <motion.button
                                 className="hero-btn secondary"
+                                onClick={() => navigate("/events")}
                                 whileHover={{
                                     scale: 1.08,
                                     y: -3,
@@ -477,13 +497,6 @@ const HeroSection = () => {
                     transition={{ delay: 3.5, duration: 1 }}
                     whileHover={{ scale: 1.1 }}
                 >
-                    <motion.span
-                        className="scroll-text"
-                        animate={{ opacity: [0.6, 1, 0.6] }}
-                        transition={{ duration: 3, repeat: Infinity }}
-                    >
-                        Discover More
-                    </motion.span>
                     <motion.div
                         animate={{ y: [0, 12, 0] }}
                         transition={{
@@ -491,9 +504,7 @@ const HeroSection = () => {
                             repeat: Infinity,
                             ease: "easeInOut",
                         }}
-                    >
-                        <ArrowDown className="scroll-arrow" size={24} />
-                    </motion.div>
+                    ></motion.div>
                 </motion.div>
             </motion.div>
         </section>

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
     Code2,
     Users,
@@ -15,6 +16,7 @@ import {
 import "./HighlightList.css";
 
 const HighlightList = () => {
+    const navigate = useNavigate();
     const highlights = [
         {
             id: 1,
@@ -304,6 +306,7 @@ const HighlightList = () => {
                 >
                     <motion.button
                         className="cta-button"
+                        onClick={() => navigate("/join")}
                         whileHover={{
                             scale: 1.05,
                             boxShadow: "0 20px 40px rgba(102, 126, 234, 0.3)",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
     Mail,
@@ -8,10 +8,78 @@ import {
     Linkedin,
     Twitter,
     Instagram,
+    Send,
 } from "lucide-react";
 import "./Footer.css";
 
 const Footer = () => {
+    const [email, setEmail] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
+
+    const handleNewsletterSubmit = async (e) => {
+        e.preventDefault();
+        if (!email) return;
+
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        // Discord webhook URL - you'll replace this with your actual webhook
+        const webhookUrl =
+            "https://discord.com/api/webhooks/1403638010590924890/fSVIkO0j9JeJBmi0ZXr1LYWbYyLataFJX7o2jGPB9rdWIH0-JaGkGybgc4tzSqMsJxWE";
+
+        const discordMessage = {
+            embeds: [
+                {
+                    title: " New Newsletter Subscription",
+                    color: 0x667eea,
+                    fields: [
+                        {
+                            name: " Email",
+                            value: email,
+                            inline: true,
+                        },
+                        {
+                            name: " Subscribed At",
+                            value: new Date().toLocaleString(),
+                            inline: true,
+                        },
+                    ],
+                    timestamp: new Date().toISOString(),
+                    footer: {
+                        text: "Microsoft Tech Community - Newsletter Signup",
+                        icon_url:
+                            "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+                    },
+                },
+            ],
+        };
+
+        try {
+            const response = await fetch(webhookUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(discordMessage),
+            });
+
+            if (response.ok) {
+                setSubmitStatus("success");
+                setEmail("");
+                setTimeout(() => setSubmitStatus(null), 5000);
+            } else {
+                setSubmitStatus("error");
+                setTimeout(() => setSubmitStatus(null), 5000);
+            }
+        } catch (error) {
+            console.error("Error sending newsletter subscription:", error);
+            setSubmitStatus("error");
+            setTimeout(() => setSubmitStatus(null), 5000);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
     const socialLinks = [
         { icon: Github, href: "#", label: "GitHub" },
         { icon: Linkedin, href: "#", label: "LinkedIn" },
@@ -183,20 +251,71 @@ const Footer = () => {
                             <div className="newsletter">
                                 <h5>Stay Updated</h5>
                                 <p>Get the latest news and updates from MTC</p>
-                                <div className="newsletter-form">
+                                <form
+                                    onSubmit={handleNewsletterSubmit}
+                                    className="newsletter-form"
+                                >
                                     <input
                                         type="email"
                                         placeholder="Enter your email"
                                         className="newsletter-input"
+                                        value={email}
+                                        onChange={(e) =>
+                                            setEmail(e.target.value)
+                                        }
+                                        required
+                                        disabled={isSubmitting}
                                     />
                                     <motion.button
+                                        type="submit"
                                         className="newsletter-btn"
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
+                                        disabled={isSubmitting || !email}
+                                        whileHover={{
+                                            scale: isSubmitting ? 1 : 1.05,
+                                        }}
+                                        whileTap={{
+                                            scale: isSubmitting ? 1 : 0.95,
+                                        }}
                                     >
-                                        Subscribe
+                                        {isSubmitting ? (
+                                            <motion.div
+                                                animate={{ rotate: 360 }}
+                                                transition={{
+                                                    duration: 1,
+                                                    repeat: Infinity,
+                                                    ease: "linear",
+                                                }}
+                                            >
+                                                <Send size={16} />
+                                            </motion.div>
+                                        ) : (
+                                            <>
+                                                <Send size={16} />
+                                                Subscribe
+                                            </>
+                                        )}
                                     </motion.button>
-                                </div>
+                                </form>
+
+                                {submitStatus && (
+                                    <motion.div
+                                        className={`newsletter-status ${submitStatus}`}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                    >
+                                        {submitStatus === "success" ? (
+                                            <span>
+                                                ✅ Successfully subscribed!
+                                            </span>
+                                        ) : (
+                                            <span>
+                                                ❌ Subscription failed. Please
+                                                try again.
+                                            </span>
+                                        )}
+                                    </motion.div>
+                                )}
                             </div>
                         </motion.div>
                     </div>
