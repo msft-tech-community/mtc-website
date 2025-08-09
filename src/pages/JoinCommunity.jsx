@@ -140,7 +140,7 @@ const JoinCommunity = () => {
                             inline: false,
                         },
                         {
-                            name: " Motivation",
+                            name: "  Motivation",
                             value: formData.motivation,
                             inline: false,
                         },
